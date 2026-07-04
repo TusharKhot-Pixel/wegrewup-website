@@ -1,6 +1,6 @@
 # wegrewup website
 
-Static landing page and privacy policy for [wegrewup](https://github.com/TusharKhot-Pixel) Android apps.
+Static landing page and privacy policy for [wegrewup](https://github.com/TusharKhot-Pixel/wegrewup-website) Android apps.
 
 ## Deploy on Vercel
 
