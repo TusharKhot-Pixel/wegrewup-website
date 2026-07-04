@@ -300,9 +300,6 @@
 
     .card.in { opacity: 1; transform: none; }
     .card:hover { border-color: var(--border-visible); }
-    .card.interactive { cursor: pointer; }
-    .card.interactive:active { transform: scale(0.99); }
-
     @media (min-width: 720px) {
       .span-6 { grid-column: span 6; }
       .span-4 { grid-column: span 4; }
@@ -439,247 +436,14 @@
     .usebar span {
       height: 100%;
       width: 0;
-      transition: width 1s var(--ease-out), opacity 0.2s var(--ease), filter 0.2s var(--ease);
-      cursor: pointer;
+      transition: width 1s var(--ease-out);
     }
-
-    .usebar span.dim { opacity: 0.25; filter: saturate(0.4); }
-    .usebar span.active { opacity: 1; filter: saturate(1.2); box-shadow: 0 0 0 1px color-mix(in srgb, currentColor 30%, transparent); }
 
     .usebar .seg-images { background: var(--hue-images); color: var(--hue-images); }
     .usebar .seg-video { background: var(--hue-video); color: var(--hue-video); }
     .usebar .seg-audio { background: var(--hue-audio); color: var(--hue-audio); }
     .usebar .seg-docs { background: var(--hue-docs); color: var(--hue-docs); }
     .usebar .seg-other { background: var(--hue-vault); color: var(--hue-vault); }
-
-    .bar-legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .legend-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 8px;
-      border: 1px solid var(--border);
-      border-radius: var(--r-pill);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: border-color 0.16s var(--ease), color 0.16s var(--ease), background 0.16s var(--ease);
-    }
-
-    .legend-chip:hover, .legend-chip.active { border-color: var(--border-visible); color: var(--text-display); background: var(--surface-raised); }
-
-    .showcase { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: stretch; }
-    @media (min-width: 840px) { .showcase { grid-template-columns: 1.1fr 0.9fr; } }
-
-    .phone-frame {
-      border: 1px solid var(--border-visible);
-      border-radius: 28px;
-      background: var(--surface);
-      padding: 14px;
-      min-height: 380px;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.2s var(--ease);
-    }
-
-    .phone-frame:focus-within { border-color: var(--accent-border); }
-
-    .phone-status {
-      display: flex;
-      justify-content: space-between;
-      font-family: "Space Mono", monospace;
-      font-size: 10px;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
-      letter-spacing: 0.06em;
-    }
-
-    .phone-topbar { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-
-    .screen-tabs {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .screen-tab {
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: var(--r-pill);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      background: transparent;
-      cursor: pointer;
-      transition: border-color 0.16s var(--ease), color 0.16s var(--ease), background 0.16s var(--ease);
-    }
-
-    .screen-tab.active { border-color: var(--accent-border); color: var(--text-display); background: var(--accent-soft); }
-
-    .phone-pill {
-      margin-left: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: var(--r-pill);
-      background: var(--surface-raised);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    .view-toggle {
-      display: inline-flex;
-      padding: 3px;
-      border: 1px solid var(--border);
-      border-radius: var(--r-pill);
-      background: var(--surface-raised);
-      margin-bottom: 10px;
-    }
-
-    .view-toggle button {
-      width: 34px; height: 28px;
-      border: 0;
-      border-radius: var(--r-pill);
-      background: transparent;
-      color: var(--text-secondary);
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-      transition: background 0.22s var(--ease), color 0.22s var(--ease);
-    }
-
-    .view-toggle button.active { background: var(--surface); color: var(--text-display); box-shadow: inset 0 0 0 1px var(--border); }
-
-    .phone-screen { position: relative; min-height: 220px; }
-
-    .screen-panel {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transform: translateY(8px);
-      pointer-events: none;
-      transition: opacity 0.32s var(--ease), transform 0.32s var(--ease-out);
-    }
-
-    .screen-panel.active { opacity: 1; transform: none; pointer-events: auto; position: relative; }
-
-    .mini-bento {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-
-    .mini-bento.grid-mode { grid-template-columns: repeat(2, 1fr); }
-
-    .mini-tile {
-      aspect-ratio: 1;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--surface-raised);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 8px;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.16s var(--ease), transform 0.2s var(--ease-out), background 0.16s var(--ease);
-    }
-
-    .mini-tile:hover { transform: translateY(-2px); border-color: var(--border-visible); }
-    .mini-tile.active { border-color: var(--accent-border); background: var(--accent-soft); transform: scale(1.02); }
-    .mini-tile .hero-num { font-size: 18px; transition: color 0.16s var(--ease); }
-
-    .mini-label {
-      font-family: "Space Mono", monospace;
-      font-size: 8px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    .file-list { display: flex; flex-direction: column; gap: 0; }
-
-    .file-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 4px;
-      border-bottom: 1px solid var(--border);
-      font-size: 13px;
-      animation: row-in 0.36s var(--ease-out) both;
-    }
-
-    @keyframes row-in {
-      from { opacity: 0; transform: translateX(-6px); }
-      to { opacity: 1; transform: none; }
-    }
-
-    .file-row .dot-sq {
-      width: 28px; height: 28px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      flex-shrink: 0;
-    }
-
-    .file-row .mq {
-      flex: 1;
-      overflow: hidden;
-      white-space: nowrap;
-      mask-image: linear-gradient(90deg, #000 85%, transparent);
-    }
-
-    .fav-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-    }
-
-    .fav-card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px;
-      background: var(--surface-raised);
-      transition: border-color 0.16s var(--ease);
-    }
-
-    .fav-card:hover { border-color: var(--accent-border); }
-
-    .demo-readout {
-      margin-top: 12px;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: var(--r-ctrl);
-      background: var(--surface-raised);
-      font-family: "Space Mono", monospace;
-      font-size: 9px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      min-height: 36px;
-      display: flex;
-      align-items: center;
-    }
-
-    .demo-readout strong { color: var(--text-display); margin-left: 6px; }
 
     .policy-card {
       border: 1px solid var(--border);
@@ -824,7 +588,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
-      .card, .row, .screen-panel, .policy-content, .row-detail { opacity: 1; transform: none; max-height: none; }
+      .card, .row, .policy-content, .row-detail { opacity: 1; transform: none; max-height: none; }
       .dot-grid { transform: none !important; }
     }
   </style>
@@ -843,7 +607,6 @@
       <nav class="nav" aria-label="Primary">
         <a class="nav-link" href="#nft" data-nav="nft">NFT</a>
         <a class="nav-link" href="#features" data-nav="features">Features</a>
-        <a class="nav-link" href="#demo" data-nav="demo">Demo</a>
         <a class="nav-link" href="#privacy" data-nav="privacy">Privacy</a>
         <button class="iconbtn" id="theme-btn" type="button" aria-label="Toggle theme"></button>
       </nav>
@@ -861,7 +624,7 @@
         wegrewup builds focused mobile tools. Our first app — <strong style="color:var(--text-display)">NFT</strong> — is a file manager shaped by Nothing OS design language: monochrome, precise, on-device.
       </p>
       <div class="hero-actions">
-        <button class="btn primary" type="button" id="scroll-demo">Try live demo</button>
+        <a class="btn primary" href="#features">View features</a>
         <a class="btn" href="#privacy">Privacy policy</a>
       </div>
       <div class="hero-stats">
@@ -876,84 +639,17 @@
         <span class="meta">Featured app</span>
         <span class="meta">Coming to play</span>
       </div>
-      <div class="showcase">
-        <article class="card card-accent in shimmer">
-          <div class="card-head">
-            <div>
-              <div class="title" style="font-size:clamp(1.8rem,4vw,2.4rem)">NFT</div>
-              <div class="meta" style="margin-top:8px">File manager · Android</div>
-            </div>
-            <div class="hero-num" style="font-size:42px">01</div>
+      <article class="card card-accent in shimmer">
+        <div class="card-head">
+          <div>
+            <div class="title" style="font-size:clamp(1.8rem,4vw,2.4rem)">NFT</div>
+            <div class="meta" style="margin-top:8px">File manager · Android</div>
           </div>
-          <p>Browse, search, and organize storage with bento categories, favorites, vault, recycle bin, remote hosts, cloud providers, LAN sharing, and media viewers.</p>
-          <div class="app-badge"><span class="live-dot"></span> Google Play — in review prep</div>
-        </article>
-
-        <div class="phone-frame" id="phone-frame">
-          <div class="phone-status"><span id="live-clock">9:41</span><span>NFT · 100%</span></div>
-          <div class="phone-topbar">
-            <span class="title" style="font-size:17px" id="phone-title">Home</span>
-            <span class="phone-pill">Search</span>
-          </div>
-          <div class="screen-tabs" role="tablist">
-            <button class="screen-tab active" type="button" data-screen="home" role="tab" aria-selected="true">Home</button>
-            <button class="screen-tab" type="button" data-screen="browser" role="tab" aria-selected="false">Browser</button>
-            <button class="screen-tab" type="button" data-screen="favorites" role="tab" aria-selected="false">Favorites</button>
-          </div>
-          <div class="view-toggle" role="group" aria-label="View mode">
-            <button type="button" class="active" data-view="grid" aria-label="Grid view"></button>
-            <button type="button" data-view="list" aria-label="List view"></button>
-          </div>
-          <div class="phone-screen">
-            <div class="screen-panel active" data-panel="home">
-              <div class="mini-bento" id="category-grid">
-                <button class="mini-tile active" type="button" data-cat="images" style="--hue:var(--hue-images)">
-                  <div class="hero-num" style="color:var(--hue-images)" data-tile-count="1284">0</div>
-                  <div class="mini-label">Images</div>
-                </button>
-                <button class="mini-tile" type="button" data-cat="video" style="--hue:var(--hue-video)">
-                  <div class="hero-num" style="color:var(--hue-video)" data-tile-count="312">0</div>
-                  <div class="mini-label">Video</div>
-                </button>
-                <button class="mini-tile" type="button" data-cat="audio" style="--hue:var(--hue-audio)">
-                  <div class="hero-num" style="color:var(--hue-audio)" data-tile-count="89">0</div>
-                  <div class="mini-label">Audio</div>
-                </button>
-                <button class="mini-tile" type="button" data-cat="docs" style="--hue:var(--hue-docs)">
-                  <div class="hero-num" style="color:var(--hue-docs)" data-tile-count="456">0</div>
-                  <div class="mini-label">Docs</div>
-                </button>
-                <button class="mini-tile" type="button" data-cat="remote" style="--hue:var(--hue-remote)">
-                  <div class="hero-num" style="color:var(--hue-remote)" data-tile-count="7">0</div>
-                  <div class="mini-label">Remote</div>
-                </button>
-                <button class="mini-tile" type="button" data-cat="favs" style="--hue:var(--accent)">
-                  <div class="hero-num" style="color:var(--accent)" data-tile-count="24">0</div>
-                  <div class="mini-label">Favs</div>
-                </button>
-              </div>
-            </div>
-            <div class="screen-panel" data-panel="browser">
-              <div class="file-list" id="file-list"></div>
-            </div>
-            <div class="screen-panel" data-panel="favorites">
-              <div class="fav-grid" id="fav-grid"></div>
-            </div>
-          </div>
-          <div style="margin-top:14px">
-            <div class="meta" style="margin-bottom:8px">Storage map · tap segment</div>
-            <div class="usebar" id="demo-bar">
-              <span class="seg-images" data-w="28" data-seg="images" title="Images 28%"></span>
-              <span class="seg-video" data-w="18" data-seg="video" title="Video 18%"></span>
-              <span class="seg-audio" data-w="12" data-seg="audio" title="Audio 12%"></span>
-              <span class="seg-docs" data-w="22" data-seg="docs" title="Docs 22%"></span>
-              <span class="seg-other" data-w="20" data-seg="other" title="Other 20%"></span>
-            </div>
-            <div class="bar-legend" id="bar-legend"></div>
-          </div>
-          <div class="demo-readout" id="demo-readout">Selected:<strong>Images · 1,284 files</strong></div>
+          <div class="hero-num" style="font-size:42px">01</div>
         </div>
-      </div>
+        <p>Browse, search, and organize storage with bento categories, favorites, vault, recycle bin, remote hosts, cloud providers, LAN sharing, and media viewers.</p>
+        <div class="app-badge"><span class="live-dot"></span> Google Play — in review prep</div>
+      </article>
     </section>
 
     <section class="section" id="features">
@@ -962,17 +658,17 @@
         <span class="meta">Tap rows to expand</span>
       </div>
       <div class="bento">
-        <article class="card span-4 interactive" data-jump="browser">
+        <article class="card span-4">
           <div class="card-icon" data-icon="folder"></div>
           <div class="title" style="font-size:15px;margin-bottom:6px">Local browser</div>
           <p>Tabs, breadcrumbs, grid/list views, multi-select, and fast search across device storage.</p>
         </article>
-        <article class="card span-4 interactive" data-jump="home">
+        <article class="card span-4">
           <div class="card-icon" data-icon="cloud"></div>
           <div class="title" style="font-size:15px;margin-bottom:6px">Cloud + remote</div>
           <p>Google Drive, OneDrive, Dropbox, FTP, SFTP, SMB — one unified remote browser.</p>
         </article>
-        <article class="card span-4 interactive" data-jump="favorites">
+        <article class="card span-4">
           <div class="card-icon" data-icon="lock"></div>
           <div class="title" style="font-size:15px;margin-bottom:6px">Vault & lock</div>
           <p>Encrypted vault for sensitive files. Optional biometric or PIN app lock.</p>
@@ -984,34 +680,18 @@
           </div>
           <p>Monochrome canvas, hairline borders, dot-matrix accents, mono readouts, and a single red accent for live states and selection.</p>
         </article>
-        <article class="card span-4 interactive" data-jump="home">
+        <article class="card span-4">
           <div class="card-icon" data-icon="wifi"></div>
           <div class="title" style="font-size:15px;margin-bottom:6px">LAN share</div>
           <p>Share a folder over Wi‑Fi with QR link. Local network only — you control when it runs.</p>
         </article>
-      </div>
-
-      <div class="rows" id="feature-rows" style="margin-top:20px"></div>
-    </section>
-
-    <section class="section" id="demo">
-      <div class="section-head">
-        <span class="meta">Interactive</span>
-        <span class="meta">Explore the demo phone above</span>
-      </div>
-      <div class="bento">
-        <article class="card span-6 in">
-          <div class="title" style="font-size:15px;margin-bottom:8px">What you can try</div>
-          <p style="color:var(--text-secondary);font-size:14px;margin-bottom:12px">Switch Home / Browser / Favorites tabs, toggle grid vs list, tap category tiles, and click storage segments to filter the readout — same interaction patterns as the app.</p>
-          <button class="btn primary" type="button" id="shuffle-demo">Shuffle demo data</button>
-        </article>
-        <article class="card span-6 in">
+        <article class="card span-6">
           <div class="card-head">
-            <span class="title" style="font-size:15px">Storage used</span>
-            <span class="meta" id="storage-pct">68%</span>
+            <span class="title" style="font-size:15px">Storage map</span>
+            <span class="meta">Internal · 68% used</span>
           </div>
           <div class="hero-num" style="font-size:48px;margin-bottom:4px" id="storage-gb" data-count-decimal="124.8">0</div>
-          <div class="meta">GB of 256 GB internal</div>
+          <div class="meta">GB of 256 GB</div>
           <div class="usebar" style="margin-top:16px" id="hero-bar">
             <span class="seg-images" data-w="28"></span>
             <span class="seg-video" data-w="18"></span>
@@ -1021,6 +701,8 @@
           </div>
         </article>
       </div>
+
+      <div class="rows" id="feature-rows" style="margin-top:20px"></div>
     </section>
 
     <section class="section" id="privacy">
@@ -1061,7 +743,6 @@
       image: '<rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="M4 16l4.5-4.5 3 3L14 12l6 6"/>',
       widget: '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/>',
       list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
-      grid: '<rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/>',
       chev: '<path d="M9 5l7 7-7 7"/>',
       sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/>',
       moon: '<path d="M20 13.5A7.5 7.5 0 1 1 10.5 4 6 6 0 0 0 20 13.5z"/>',
@@ -1071,11 +752,7 @@
       `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ''}</svg>`;
 
     document.querySelectorAll('[data-icon]').forEach(el => {
-      el.innerHTML = svg(el.dataset.icon, 20);
-    });
-
-    document.querySelectorAll('.view-toggle button').forEach(btn => {
-      btn.innerHTML = svg(btn.dataset.view, 16);
+      el.innerHTML = svg(el.dataset.icon, el.classList.contains('row-ic') ? 18 : 20);
     });
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1148,143 +825,21 @@
         entry.target.classList.add('in');
         if (entry.target.dataset.count) animateCount(entry.target, Number(entry.target.dataset.count));
         if (entry.target.dataset.countDecimal) animateCount(entry.target, Number(entry.target.dataset.countDecimal), { decimal: 1 });
-        if (entry.target.dataset.tileCount) animateCount(entry.target, Number(entry.target.dataset.tileCount));
         io.unobserve(entry.target);
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.card, .row, .hero-num[data-count], .hero-num[data-count-decimal], .hero-num[data-tile-count]').forEach(el => io.observe(el));
+    document.querySelectorAll('.card, .row, .hero-num[data-count], .hero-num[data-count-decimal]').forEach(el => io.observe(el));
 
     const fillBar = (bar) => {
       bar?.querySelectorAll('[data-w]').forEach(seg => { seg.style.width = seg.dataset.w + '%'; });
     };
-    ['demo-bar', 'hero-bar'].forEach(id => {
-      const bar = document.getElementById(id);
-      if (!bar) return;
+    const heroBar = document.getElementById('hero-bar');
+    if (heroBar) {
       new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) { fillBar(bar); }
-      }, { threshold: 0.3 }).observe(bar);
-    });
-
-    // Demo data
-    const CATEGORIES = {
-      images: { label: 'Images', count: 1284, pct: 28, hue: 'var(--hue-images)' },
-      video: { label: 'Video', count: 312, pct: 18, hue: 'var(--hue-video)' },
-      audio: { label: 'Audio', count: 89, pct: 12, hue: 'var(--hue-audio)' },
-      docs: { label: 'Docs', count: 456, pct: 22, hue: 'var(--hue-docs)' },
-      remote: { label: 'Remote', count: 7, pct: 0, hue: 'var(--hue-remote)' },
-      favs: { label: 'Favorites', count: 24, pct: 0, hue: 'var(--accent)' },
-      other: { label: 'Other', count: 890, pct: 20, hue: 'var(--hue-vault)' },
-    };
-
-    const FILES = {
-      images: ['IMG_2048.dng', 'Scan_Receipt.pdf.jpg', 'Wallpaper_nothing.png', 'Vacation_001.heic'],
-      video: ['Clip_4K_final.mp4', 'Screen_recording.mp4', 'Demo_reel.mov'],
-      docs: ['Notes_meeting.txt', 'Budget_2026.xlsx', 'Resume_final.pdf'],
-      audio: ['Track_01.flac', 'Podcast_ep12.m4a'],
-      remote: ['sftp://nas/backups', 'drive://Projects'],
-      favs: ['Project_brief.pdf', 'Passport_scan.jpg'],
-    };
-
-    const FAVS = ['Project_brief.pdf', 'Passport_scan.jpg', 'Track_01.flac', 'Wallpaper_nothing.png'];
-
-    let selectedCat = 'images';
-    const readout = document.getElementById('demo-readout');
-    const phoneTitle = document.getElementById('phone-title');
-
-    const updateReadout = (key) => {
-      const c = CATEGORIES[key] || CATEGORIES.images;
-      selectedCat = key;
-      readout.innerHTML = `Selected:<strong>${c.label} · ${c.count.toLocaleString()} files</strong>`;
-      document.querySelectorAll('.mini-tile').forEach(t => t.classList.toggle('active', t.dataset.cat === key));
-      document.querySelectorAll('#demo-bar [data-seg]').forEach(seg => {
-        const match = seg.dataset.seg === key || (key === 'favs' && seg.dataset.seg === 'other');
-        seg.classList.toggle('active', match);
-        seg.classList.toggle('dim', !match && key !== 'remote');
-      });
-      document.querySelectorAll('#bar-legend .legend-chip').forEach(chip => {
-        chip.classList.toggle('active', chip.dataset.seg === key);
-      });
-    };
-
-    // Legend chips
-    const legend = document.getElementById('bar-legend');
-    Object.entries(CATEGORIES).filter(([k]) => ['images','video','audio','docs','other'].includes(k)).forEach(([key, c]) => {
-      const chip = document.createElement('button');
-      chip.type = 'button';
-      chip.className = 'legend-chip' + (key === 'images' ? ' active' : '');
-      chip.dataset.seg = key;
-      chip.innerHTML = `<span class="hue-dot" style="background:${c.hue}"></span>${c.label} ${c.pct}%`;
-      chip.addEventListener('click', () => updateReadout(key));
-      legend.appendChild(chip);
-    });
-
-    document.querySelectorAll('#demo-bar [data-seg]').forEach(seg => {
-      seg.addEventListener('click', () => updateReadout(seg.dataset.seg));
-    });
-
-    document.querySelectorAll('.mini-tile').forEach(tile => {
-      tile.addEventListener('click', () => updateReadout(tile.dataset.cat));
-    });
-
-    // Screen tabs
-    const setScreen = (name) => {
-      document.querySelectorAll('.screen-tab').forEach(t => {
-        const on = t.dataset.screen === name;
-        t.classList.toggle('active', on);
-        t.setAttribute('aria-selected', on);
-      });
-      document.querySelectorAll('.screen-panel').forEach(p => {
-        p.classList.toggle('active', p.dataset.panel === name);
-      });
-      phoneTitle.textContent = name.charAt(0).toUpperCase() + name.slice(1);
-      if (name === 'browser') renderFiles();
-      if (name === 'favorites') renderFavs();
-    };
-
-    document.querySelectorAll('.screen-tab').forEach(tab => {
-      tab.addEventListener('click', () => setScreen(tab.dataset.screen));
-    });
-
-    document.querySelectorAll('.card[data-jump]').forEach(card => {
-      card.addEventListener('click', () => {
-        document.getElementById('nft').scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => setScreen(card.dataset.jump), 400);
-        showToast('Demo · ' + card.dataset.jump);
-      });
-    });
-
-    document.getElementById('scroll-demo').addEventListener('click', () => {
-      document.getElementById('nft').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // View toggle
-    const categoryGrid = document.getElementById('category-grid');
-    document.querySelectorAll('.view-toggle button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.view-toggle button').forEach(b => b.classList.toggle('active', b === btn));
-        categoryGrid.classList.toggle('grid-mode', btn.dataset.view === 'grid');
-        showToast(btn.dataset.view === 'grid' ? 'Grid view' : 'List view');
-      });
-    });
-
-    const renderFiles = () => {
-      const list = document.getElementById('file-list');
-      const files = FILES[selectedCat] || FILES.images;
-      list.innerHTML = files.map((f, i) => `
-        <div class="file-row" style="animation-delay:${i * 60}ms">
-          <span class="dot-sq" style="border-color:${CATEGORIES[selectedCat]?.hue || 'var(--border)'}"></span>
-          <span class="mq">${f}</span>
-        </div>`).join('');
-    };
-
-    const renderFavs = () => {
-      document.getElementById('fav-grid').innerHTML = FAVS.map(f => `
-        <div class="fav-card">
-          <div class="row-meta" style="margin-bottom:6px">Pinned</div>
-          <div class="row-title" style="font-size:13px">${f}</div>
-        </div>`).join('');
-    };
+        if (e.isIntersecting) fillBar(heroBar);
+      }, { threshold: 0.3 }).observe(heroBar);
+    }
 
     // Feature rows expandable
     const FEATURES = [
@@ -1315,32 +870,6 @@
       rowsEl.appendChild(wrap);
     });
     rowsEl.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = svg(el.dataset.icon, 18); });
-
-    // Shuffle demo
-    document.getElementById('shuffle-demo').addEventListener('click', () => {
-      Object.keys(CATEGORIES).forEach(k => {
-        if (k === 'remote' || k === 'favs') return;
-        CATEGORIES[k].count = Math.floor(Math.random() * 2000) + 50;
-      });
-      document.querySelectorAll('[data-tile-count]').forEach(el => {
-        const cat = el.closest('.mini-tile')?.dataset.cat;
-        if (cat && CATEGORIES[cat]) {
-          el.textContent = '0';
-          animateCount(el, CATEGORIES[cat].count);
-        }
-      });
-      updateReadout(selectedCat);
-      showToast('Demo data shuffled');
-    });
-
-    // Live clock
-    const clock = document.getElementById('live-clock');
-    const tickClock = () => {
-      const d = new Date();
-      clock.textContent = d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-    };
-    tickClock();
-    setInterval(tickClock, 30000);
 
     // Privacy accordion
     const POLICY = [
@@ -1402,8 +931,6 @@
       }
     });
 
-    updateReadout('images');
-    renderFiles();
   </script>
 </body>
 </html>
