@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy Policy for NFT by wegrewup — how we handle your data on-device and through optional cloud features." />
+  <meta name="theme-color" content="#000000" />
+  <title>Privacy Policy — wegrewup · NFT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --canvas: #000000;
+      --surface: #1a1a1a;
+      --text-display: #ffffff;
+      --text-primary: #e8e8e8;
+      --text-secondary: #999999;
+      --border: #222222;
+      --accent: #d71921;
+      --gutter: clamp(20px, 5vw, 32px);
+      --max: 800px;
+      --content: 600px;
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --canvas: #f5f5f5;
+      --surface: #ffffff;
+      --text-display: #000000;
+      --text-primary: #1a1a1a;
+      --text-secondary: #666666;
+      --border: #e8e8e8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      background: var(--canvas);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; }
+    a.link { text-decoration: underline; text-underline-offset: 3px; }
+
+    .site-header {
+      padding: 32px var(--gutter) 24px;
+      border-bottom: 1px solid var(--border);
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .crumb {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .crumb a:hover { color: var(--text-display); }
+
+    main {
+      flex: 1;
+      padding: 48px var(--gutter) 64px;
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .doc {
+      max-width: var(--content);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-family: "Space Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .doc-head { display: flex; flex-direction: column; gap: 6px; }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-display);
+    }
+
+    .effective {
+      font-size: 16px;
+      color: var(--text-secondary);
+    }
+
+    .lede, .doc p, .doc li, address {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .lede { margin-top: -8px; }
+
+    address { font-style: normal; }
+
+    section { display: flex; flex-direction: column; gap: 12px; }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text-display);
+    }
+
+    ul {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .site-footer {
+      padding: 24px var(--gutter) 32px;
+      border-top: 1px solid var(--border);
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-links { display: flex; gap: 20px; }
+
+    .theme-btn {
+      margin-left: auto;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: "Space Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .theme-btn:hover { color: var(--text-display); border-color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a href="/">wegrewup</a>
+      <span aria-hidden="true">/</span>
+      <span>privacy</span>
+      <button class="theme-btn" id="theme-btn" type="button">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <article class="doc">
+      <div class="brand-mark">NFT</div>
+
+      <header class="doc-head">
+        <h1>Privacy Policy</h1>
+        <p class="effective">July 4, 2026</p>
+      </header>
+
+      <p class="lede">
+        NFT (“NFT”, “the App”, “we”, “our”, or “us”) is a file manager for Android published by
+        <strong style="color:var(--text-display)">wegrewup</strong>. This Privacy Policy explains how information is handled when you use the App.
+      </p>
+
+      <address>
+        wegrewup<br />
+        Email: <a class="link" href="mailto:wegrewwup@gmail.com">wegrewwup@gmail.com</a>
+      </address>
+
+      <section>
+        <h2>Overview</h2>
+        <p>
+          NFT is designed to keep your files on your device. Core browsing, organization, vault, favorites, and recycle-bin features work locally without a wegrewup account. We do not operate backend servers that store your file contents.
+        </p>
+        <p>
+          Optional features — such as cloud sign-in, remote storage, LAN sharing, or in-app purchases — may involve third-party services or network activity as described below.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data We Do Not Collect Through Our Servers</h2>
+        <p>We do not maintain a wegrewup user account system and we do not collect or store on our servers:</p>
+        <ul>
+          <li>your files or file contents</li>
+          <li>your name, postal address, or phone number</li>
+          <li>account credentials for NFT itself</li>
+          <li>advertising profiles or cross-app tracking identifiers</li>
+          <li>analytics or crash-reporting data sent to wegrewup</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Information Processed on Your Device</h2>
+        <p>Depending on how you use the App, the following may be stored locally on your device:</p>
+        <ul>
+          <li>app settings and preferences</li>
+          <li>favorites, recent files, and browse history</li>
+          <li>recycle bin metadata and trashed file references</li>
+          <li>encrypted vault keys and vault-related data (if you use the vault)</li>
+          <li>saved remote host credentials (FTP, SFTP, SMB, etc.)</li>
+          <li>app lock PIN or biometric preference (if enabled)</li>
+          <li>home screen widget display state</li>
+        </ul>
+        <p>This data remains on your device unless you delete the App, clear app data, or use a feature that transmits data as described below.</p>
+      </section>
+
+      <section>
+        <h2>Device Permissions</h2>
+        <p>The App may request permissions needed for file management features, such as:</p>
+        <ul>
+          <li><strong>Storage / media access</strong> — to browse, organize, preview, copy, move, and delete files you choose</li>
+          <li><strong>Network access</strong> — for remote hosts, cloud providers, LAN sharing, and opening external links</li>
+          <li><strong>Biometric or device credential access</strong> — only if you enable app lock</li>
+          <li><strong>Install / manage external storage</strong> — where required by Android for certain file operations</li>
+        </ul>
+        <p>The App does not request access to your contacts, SMS, call logs, or precise location for its core functionality.</p>
+      </section>
+
+      <section>
+        <h2>Cloud and Remote Storage</h2>
+        <p>
+          If you choose to connect Google Drive, OneDrive, Dropbox, or a remote host (FTP, SFTP, SMB), authentication and file access are handled through the respective provider or protocol. The App receives access tokens or session credentials to list and download files you open.
+        </p>
+        <p>
+          We do not receive your cloud or remote passwords. OAuth sign-in for Google, Microsoft, and Dropbox is completed with those providers. Saved host credentials you store in the App are kept locally on your device.
+        </p>
+      </section>
+
+      <section>
+        <h2>LAN Sharing</h2>
+        <p>
+          When you start Wi‑Fi sharing, the App runs a temporary file server on your local network for the folder you select. Only people who can reach that network and have your link or QR code can access the shared folder. You can stop sharing at any time to end the server.
+        </p>
+      </section>
+
+      <section>
+        <h2>Network Activity</h2>
+        <p>Network requests occur only when you use features that require them, such as:</p>
+        <ul>
+          <li>connecting to cloud or remote storage</li>
+          <li>LAN file sharing</li>
+          <li>opening support or tip links in your browser</li>
+          <li>Google Play Billing for optional purchases</li>
+        </ul>
+        <p>Core local file browsing does not require transmitting your files to wegrewup.</p>
+      </section>
+
+      <section>
+        <h2>Third-Party Services and SDKs</h2>
+        <p>The App may use third-party components when you enable related features, including:</p>
+        <ul>
+          <li><strong>Google Play Billing</strong> — optional membership or support purchases</li>
+          <li><strong>Google Sign-In / Google Drive API</strong> — optional cloud access</li>
+          <li><strong>Microsoft identity / Graph API</strong> — optional OneDrive access</li>
+          <li><strong>Dropbox API</strong> — optional Dropbox access</li>
+          <li><strong>Buy Me a Coffee</strong> — optional tip pages opened in your browser</li>
+        </ul>
+        <p>These services are governed by their own privacy policies. We do not control how third parties process data once you choose to use them.</p>
+      </section>
+
+      <section>
+        <h2>Payments and Subscriptions</h2>
+        <p>
+          Optional support membership or in-app purchases, if offered, are processed by Google Play. Purchases, billing, and subscription management are handled by Google. We do not collect, process, or store your payment card details.
+        </p>
+      </section>
+
+      <section>
+        <h2>Google Play</h2>
+        <p>
+          The App is distributed via Google Play. Google may collect and process personal data in connection with app downloads, updates, purchases, and device services. We do not receive personal payment information from Google about individual users beyond what is needed to validate purchases through Play Billing.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data Sharing</h2>
+        <p>
+          We do not sell, rent, or share personal data with third parties for advertising. Data leaves your device only when you use optional networked features (cloud, remote hosts, LAN sharing, browser links, or Play purchases) as described in this policy.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data Retention</h2>
+        <p>
+          Data stored locally by the App remains on your device until you delete it, clear app data, uninstall the App, or use in-app features such as emptying the recycle bin or removing favorites. We do not maintain a central database of your files or browsing activity.
+        </p>
+      </section>
+
+      <section>
+        <h2>Children's Privacy</h2>
+        <p>
+          The App is intended for general audiences. We do not knowingly collect personal information from children through wegrewup servers. If you believe a child has provided us personal information directly, contact us and we will make reasonable efforts to assist.
+        </p>
+      </section>
+
+      <section>
+        <h2>International Users</h2>
+        <p>
+          The App is available in multiple regions through Google Play. Because we do not operate a central user database for file content, your files and local app data remain on your device unless you use networked features that involve third-party providers in other countries.
+        </p>
+      </section>
+
+      <section>
+        <h2>Legal Basis (GDPR)</h2>
+        <p>
+          Where the GDPR applies, processing necessary to provide the App’s local functionality is based on our legitimate interest in operating and improving the App and on performance of the service you request by using it. For optional cloud, remote, billing, or sharing features, processing is based on your choice to use those features.
+        </p>
+      </section>
+
+      <section>
+        <h2>Your Rights</h2>
+        <p>
+          Because most App data is stored locally on your device, you can access, change, or delete it through the App or your device settings. You may also uninstall the App to remove locally stored app data, subject to Android system behavior.
+        </p>
+        <p>
+          If you contact us with a privacy-related request, we will make reasonable efforts to assist you at
+          <a class="link" href="mailto:wegrewwup@gmail.com">wegrewwup@gmail.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. If we make material changes, we will update the effective date above. Continued use of the App after changes become effective constitutes acceptance of the updated policy.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>If you have questions about this Privacy Policy, contact:</p>
+        <address>
+          wegrewup<br />
+          Email: <a class="link" href="mailto:wegrewwup@gmail.com">wegrewwup@gmail.com</a>
+        </address>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 wegrewup</span>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const btn = document.getElementById('theme-btn');
+    const apply = (theme) => {
+      root.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#000000' : '#f5f5f5';
+      btn.textContent = theme === 'dark' ? 'Light' : 'Dark';
+      localStorage.setItem('wegrewup-theme', theme);
+    };
+    apply(localStorage.getItem('wegrewup-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+    btn.addEventListener('click', () => apply(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+  </script>
+</body>
+</html>

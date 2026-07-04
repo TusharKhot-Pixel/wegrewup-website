@@ -607,7 +607,7 @@
       <nav class="nav" aria-label="Primary">
         <a class="nav-link" href="#nft" data-nav="nft">NFT</a>
         <a class="nav-link" href="#features" data-nav="features">Features</a>
-        <a class="nav-link" href="#privacy" data-nav="privacy">Privacy</a>
+        <a class="nav-link" href="/privacy.html">Privacy</a>
         <button class="iconbtn" id="theme-btn" type="button" aria-label="Toggle theme"></button>
       </nav>
     </header>
@@ -625,7 +625,7 @@
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#features">View features</a>
-        <a class="btn" href="#privacy">Privacy policy</a>
+        <a class="btn" href="/privacy.html">Privacy policy</a>
       </div>
       <div class="hero-stats">
         <div class="stat-item"><div class="hero-num" data-count="26">0</div><div class="meta" style="margin-top:6px">Min SDK</div></div>
@@ -705,21 +705,18 @@
       <div class="rows" id="feature-rows" style="margin-top:20px"></div>
     </section>
 
-    <section class="section" id="privacy">
+    <section class="section" id="contact">
       <div class="section-head">
         <span class="meta">Legal</span>
         <span class="meta">Last updated · Jul 4, 2026</span>
       </div>
-      <article class="policy-card">
-        <div class="policy-head">
-          <div class="title" style="font-size:20px">Privacy policy</div>
-          <p style="margin-top:8px;color:var(--text-secondary);font-size:14px">
-            Applies to apps published by <strong style="color:var(--text-display)">wegrewup</strong>, including <strong style="color:var(--text-display)">NFT</strong>.
-          </p>
-          <div class="policy-nav" id="policy-nav"></div>
-        </div>
-        <div class="policy-sections" id="policy-sections"></div>
-        <div style="padding:0 20px 20px">
+      <article class="card card-accent">
+        <div class="title" style="font-size:20px;margin-bottom:8px">Privacy policy</div>
+        <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px">
+          NFT keeps files on your device. Optional cloud, remote, LAN sharing, and Play Billing are covered in our full policy.
+        </p>
+        <a class="btn primary" href="/privacy.html">Read privacy policy</a>
+        <div style="margin-top:20px">
           <p style="color:var(--text-secondary);font-size:14px;margin-bottom:8px">Questions about privacy or NFT?</p>
           <button class="contact-chip" type="button" id="copy-email">wegrewwup@gmail.com</button>
         </div>
@@ -728,7 +725,7 @@
 
     <footer>
       <span class="meta">© 2026 wegrewup</span>
-      <a class="meta underline" href="#privacy">Privacy policy</a>
+      <a class="meta underline" href="/privacy.html">Privacy policy</a>
     </footer>
   </div>
 
@@ -870,50 +867,6 @@
       rowsEl.appendChild(wrap);
     });
     rowsEl.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = svg(el.dataset.icon, 18); });
-
-    // Privacy accordion
-    const POLICY = [
-      { id: 'summary', title: 'Summary', html: '<ul><li>NFT is a local file manager — files stay on device unless you connect cloud/remote.</li><li>We do not sell personal data.</li><li>Cloud auth uses official provider sign-in — we never receive your passwords.</li></ul>' },
-      { id: 'access', title: 'Information we access', html: '<p>Depending on features:</p><ul><li><strong>Files and media</strong> on your device</li><li><strong>Storage statistics</strong></li><li><strong>Network</strong> for remote/cloud/LAN</li><li><strong>Biometrics</strong> if app lock enabled</li><li><strong>Purchases</strong> via Play Billing</li></ul>' },
-      { id: 'stored', title: 'Stored on device', html: '<ul><li>Settings, favorites, recent files</li><li>Vault keys (encrypted)</li><li>Remote credentials (local)</li><li>Recycle bin metadata</li></ul>' },
-      { id: 'cloud', title: 'Cloud & remote', html: '<p>Authentication handled by Google, Microsoft, or Dropbox. We receive tokens to list/download files you open. No wegrewup backend for file content.</p>' },
-      { id: 'lan', title: 'LAN sharing', html: '<p>Temporary server on your local network. Only people with your link/QR on the same network can access the folder you choose.</p>' },
-      { id: 'third', title: 'Third-party services', html: '<ul><li>Google Play Billing</li><li>Buy Me a Coffee (browser)</li><li>Cloud provider sign-in</li></ul>' },
-      { id: 'nocollect', title: 'Data we do not collect', html: '<p>No wegrewup account required. No file uploads to our servers. No ad tracking of file names.</p>' },
-      { id: 'children', title: 'Children', html: '<p>Not directed at children under 13.</p>' },
-    ];
-
-    const policyNav = document.getElementById('policy-nav');
-    const policySections = document.getElementById('policy-sections');
-
-    POLICY.forEach((p, i) => {
-      const navBtn = document.createElement('button');
-      navBtn.type = 'button';
-      navBtn.textContent = p.title;
-      navBtn.dataset.id = p.id;
-      navBtn.addEventListener('click', () => {
-        const item = document.getElementById('policy-' + p.id);
-        item?.classList.add('open');
-        item?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        policyNav.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.id === p.id));
-      });
-      policyNav.appendChild(navBtn);
-
-      const item = document.createElement('div');
-      item.className = 'policy-item' + (i === 0 ? ' open' : '');
-      item.id = 'policy-' + p.id;
-      item.innerHTML = `
-        <button class="policy-trigger" type="button">
-          <span>${p.title}</span>
-          <span class="chev">${svg('chev', 16)}</span>
-        </button>
-        <div class="policy-content">${p.html}</div>`;
-      item.querySelector('.policy-trigger').addEventListener('click', () => {
-        item.classList.toggle('open');
-        policyNav.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.id === p.id && item.classList.contains('open')));
-      });
-      policySections.appendChild(item);
-    });
 
     // Copy email
     document.getElementById('copy-email').addEventListener('click', async function () {
